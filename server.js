@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const pool = require("./conexion/cnn");
 
 //middlewares
 app.use(express.json());
@@ -21,6 +22,10 @@ app.use(require("./routes/orderRoute"));
 
 app.get("/api/home", (req, res) => {
   res.json({ message: "Like this video!", people: ["Harry", "Jack", "barry"] });
+});
+app.get("/ping", async (req, res) => {
+  const result = await pool.query("SELECT NOW()");
+  return res.json(result.rows[0]);
 });
 
 app.listen(PORT, () => {
