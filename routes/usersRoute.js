@@ -14,7 +14,7 @@ const decryp = (data, key) => {
 };
 
 //#region USUARIOS PROVEEDOR
-router.post("/getusers", async (req, res) => {
+router.get("/getusers", async (req, res) => {
   let result = { status: true, data: "" };
 
   try {

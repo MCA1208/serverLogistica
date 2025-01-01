@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const pool = require("../conexion/cnn");
 
-router.post("/getsupplier", async (req, res) => {
+router.get("/getsupplier", async (req, res) => {
   let result = { status: true, data: "" };
 
   try {

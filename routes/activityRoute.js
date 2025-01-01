@@ -3,7 +3,7 @@ const router = Router();
 const pool = require("../conexion/cnn");
 
 //#region  METODOS GET
-router.post("/getactivity", async (req, res) => {
+router.get("/getactivity", async (req, res) => {
   let result = { status: true, data: "" };
   try {
     const response = await pool.query("SELECT * FROM activity");

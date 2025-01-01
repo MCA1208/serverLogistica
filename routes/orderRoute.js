@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const pool = require("../conexion/cnn");
 
-router.post("/getorders", async (req, res) => {
+router.get("/getorders", async (req, res) => {
   let result = { status: true, data: "" };
 
   try {
@@ -21,7 +21,7 @@ TO_CHAR(enddate, 'dd/mm/yyyy') as enddate, TO_CHAR(endhour, 'HH24:MI') as endhou
   }
 });
 
-router.post("/getstateorders", async (req, res) => {
+router.get("/getstateorders", async (req, res) => {
   let result = { status: true, data: "" };
 
   try {
